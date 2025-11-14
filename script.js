@@ -454,3 +454,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     }
 });
+
+// Lorsque l'on clique sur un lien de navigation, ferme le menu mobile
+const navItems = document.querySelectorAll('.nav-links a');
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
+});
