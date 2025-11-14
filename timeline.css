@@ -415,7 +415,11 @@
 /* Responsive */
 @media (max-width: 768px) {
     .timeline-track {
-        height: 500px;
+        height: 620px;
+    }
+
+    .timeline-horizontal{
+        padding: 0px 0px;
     }
     
     .timeline-events {
