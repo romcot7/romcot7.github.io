@@ -413,6 +413,7 @@
 }
 
 /* Responsive */
+/* Responsive - VERSION CORRIGÉE */
 @media (max-width: 768px) {
     .timeline-track {
         height: 500px;
@@ -427,18 +428,64 @@
         min-width: 280px;
     }
     
-    .horizontal-card {
-        width: 280px;
-        top: 230px;
-    }
-    
+    /* RÉINITIALISATION DES POSITIONS POUR TOUS LES ÉVÉNEMENTS */
     .marker-glow,
     .marker-core {
-        top: 190px;
+        top: 190px !important; /* Force la même position pour tous */
     }
     
     .year-badge {
-        top: 150px;
+        top: 150px !important; /* Force la même position pour tous */
+    }
+    
+    .horizontal-card {
+        width: 280px;
+        top: 230px !important; /* Force la même position pour tous */
+    }
+    
+    /* CORRECTIONS SPÉCIFIQUES POUR LES ÉVÉNEMENTS AVEC ONGLETS */
+    .tabbed-event {
+        /* Réinitialise toute position spécifique */
+        position: relative;
+    }
+    
+    .tabbed-event .event-marker {
+        /* Assure que le marqueur a la même hauteur */
+        height: auto;
+    }
+    
+    .tab-indicator {
+        top: -35px !important; /* Position cohérente */
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+    
+    .tabbed-event.visible .tab-indicator {
+        top: -30px !important;
+    }
+    
+    /* Ajustements du contenu des onglets pour mobile */
+    .tab-content {
+        min-height: 170px; /* Légèrement réduit pour mobile */
+    }
+    
+    .tab-pane {
+        padding: 15px;
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .card-title {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .card-desc {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
     }
     
     .tab-button {
@@ -446,7 +493,62 @@
         padding: 8px 10px;
     }
     
+    /* Ajustement spécifique pour les cartes normales */
+    .timeline-event:not(.tabbed-event) .horizontal-card {
+        top: 230px !important;
+    }
+    
+    /* Ajustement spécifique pour les cartes avec onglets */
+    .tabbed-event .horizontal-card {
+        top: 230px !important;
+    }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 480px) {
+    .timeline-track {
+        height: 480px;
+    }
+    
+    .timeline-events {
+        gap: 60px;
+        padding: 0 40px;
+    }
+    
+    .timeline-event {
+        min-width: 250px;
+    }
+    
+    .horizontal-card {
+        width: 250px;
+        top: 220px !important;
+    }
+    
+    .marker-glow,
+    .marker-core {
+        top: 180px !important;
+    }
+    
+    .year-badge {
+        top: 140px !important;
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
     .tab-content {
-        min-height: 180px;
+        min-height: 160px;
+    }
+    
+    .tab-pane {
+        padding: 12px;
+    }
+    
+    .card-tabs {
+        padding: 6px;
+    }
+    
+    .tab-button {
+        font-size: 0.7rem;
+        padding: 6px 8px;
     }
 }
