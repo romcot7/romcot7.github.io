@@ -371,6 +371,7 @@
     margin: 0 auto;
     display: block;
     width: fit-content;
+    margin-bottom: 5px;
 }
 
 /* Indicateur de scroll */
